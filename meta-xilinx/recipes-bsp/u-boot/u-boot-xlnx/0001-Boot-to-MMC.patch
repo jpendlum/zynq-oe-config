@@ -1,0 +1,26 @@
+From 8e733967c817296acd1102d88c72a6beaa796660 Mon Sep 17 00:00:00 2001
+From: Jonathon Pendlum <jon.pendlum@gmail.com>
+Date: Wed, 12 Jun 2013 14:22:14 -0400
+Subject: [PATCH] Boot to MMC
+
+
+Signed-off-by: Jonathon Pendlum <jon.pendlum@gmail.com>
+---
+ include/configs/zynq_common.h |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/configs/zynq_common.h b/include/configs/zynq_common.h
+index 28948fb..9e329d3 100644
+--- a/include/configs/zynq_common.h
++++ b/include/configs/zynq_common.h
+@@ -241,7 +241,7 @@
+ 		"fatload mmc 0 0x3000000 ${kernel_image} && " \
+ 		"fatload mmc 0 0x2A00000 ${devicetree_image} && " \
+ 		"fatload mmc 0 0x2000000 ${ramdisk_image} && " \
+-		"bootm 0x3000000 0x2000000 0x2A00000\0" \
++		"bootm 0x3000000 - 0x2A00000\0" \
+ 	"nandboot=echo Copying Linux from NAND flash to RAM... && " \
+ 		"nand read 0x3000000 0x100000 ${kernel_size} && " \
+ 		"nand read 0x2A00000 0x600000 ${devicetree_size} && " \
+1.7.9.5
+
